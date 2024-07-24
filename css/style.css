@@ -8,15 +8,25 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f4;
 }
 
-header {
+.background-image {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vh; /* Change from 100vw to 100vh */
+    height: 100vw; /* Change from 100vh to 100vw */
+    background: url('../images/background.png') no-repeat center center;
+    background-size: cover;
+    transform: translate(-50%, -50%) rotate(90deg);
+    z-index: -1;
+}
+
+.hero-section {
     text-align: center;
     padding: 4rem 0;
-    background: #333;
     color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .header-content {
@@ -25,18 +35,50 @@ header {
     padding: 0 1rem;
 }
 
-header h1 {
+.profile-picture {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.hero-section h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
 
-header p {
+.hero-section p {
     font-size: 1.2rem;
     margin-bottom: 1rem;
 }
 
+.buttons {
+    margin-top: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #555;
+}
+
 main {
     padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .portfolio {
@@ -86,9 +128,10 @@ main {
 footer {
     text-align: center;
     padding: 2rem 0;
-    background: #333;
+    background: rgba(0, 0, 0, 0.5);
     color: #fff;
-    margin-top: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 footer a {
@@ -112,11 +155,11 @@ footer p {
 
 /* Media Queries */
 @media (max-width: 768px) {
-    header h1 {
+    .hero-section h1 {
         font-size: 2rem;
     }
 
-    header p {
+    .hero-section p {
         font-size: 1rem;
     }
 
@@ -126,15 +169,15 @@ footer p {
 }
 
 @media (max-width: 480px) {
-    header {
+    .hero-section {
         padding: 2rem 0;
     }
 
-    header h1 {
+    .hero-section h1 {
         font-size: 1.5rem;
     }
 
-    header p {
+    .hero-section p {
         font-size: 0.9rem;
     }
 
